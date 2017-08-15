@@ -11,6 +11,7 @@ class strongswan::service (
   $provider = $strongswan::env::service_provider,
   $ensure   = $strongswan::env::service_ensure,
   $enable   = $strongswan::env::service_enable,
+  $restart  = $strongswan::env::service_restart,
 ) inherits strongswan::env {
   service { 'strongswan':
     ensure     => $ensure,
@@ -19,5 +20,6 @@ class strongswan::service (
     enable     => $enable,
     hasstatus  => true,
     hasrestart => true,
+    restart    => $restart,
   }
 }
