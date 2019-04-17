@@ -21,7 +21,7 @@ class strongswan::env {
   $service_provider = 'systemd'
   $service_ensure   = 'running'
   $service_enable   = true
-  $service_restart  = 'ipsec reload'
+  $service_restart  = 'ipsec rereadall && ipsec reload'
 
   # Where do we store all of the custom connection configs?
   $conn_conf_path    = '/etc/ipsec.d/conns'
